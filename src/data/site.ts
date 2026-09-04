@@ -23,7 +23,8 @@ export const links = {
   latestRelease: 'https://github.com/Nikola1Davydov/AnalyzeTool/releases/latest',
   wiki: 'https://github.com/Nikola1Davydov/AnalyzeTool/wiki',
   issues: 'https://github.com/Nikola1Davydov/AnalyzeTool/issues',
-  youtube: 'https://www.youtube.com/@AnalyseTool',
+  youtube: 'https://www.youtube.com/@AnalyseTool-Revit',
+  familyManager: 'https://github.com/Nikola1Davydov/AnalyseTool.FamilyManager',
   ollama: 'https://ollama.com/download',
   webview2: 'https://developer.microsoft.com/microsoft-edge/webview2/',
 } as const
@@ -55,7 +56,7 @@ export const officialExtensions: readonly Extension[] = [
   {
     name: 'Family Manager',
     note: 'Browse, place and audit families — our own extension, on the same rails as yours.',
-    href: links.wiki,
+    href: links.familyManager,
   },
   {
     name: 'Extension catalog',
