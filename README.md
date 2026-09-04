@@ -38,7 +38,7 @@ src/components/
 
 ## Deployment
 
-`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main` and on manual dispatch. The Pages source for the repository must be set to "GitHub Actions".
+Netlify: `netlify.toml` sets the build command (`npm run build`), the publish directory (`dist`) and Node 24, so connecting the repository is enough. Any other static host works the same way: build, upload `dist/`.
 
 ## Content knobs
 
