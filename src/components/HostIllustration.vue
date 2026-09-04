@@ -74,7 +74,7 @@ function ribbonPanels(t: number): Panel[] {
       big: [big('Rename Sheets', '▤', 4)],
       cols: [[small('FloorPlanGenerator', '', 5, true), small('Types from SQLite', '', 7, true), small(INVOKED, '', 9, true)]],
     },
-    { label: 'Site', active: false, on: t >= 11, big: [big('Umgebung123', 'U', 12, null, true)], cols: [] },
+    { label: 'Site', active: false, on: t >= 11, big: [big('Site from map', 'U', 12, null, true)], cols: [] },
   ]
 }
 
