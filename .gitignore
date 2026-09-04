@@ -427,3 +427,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Vite build output
+dist/
+*.local
+
+# Claude Design handoff bundle (local reference only)
+*-handoff.zip

@@ -1,0 +1,99 @@
+@import './tokens.css';
+
+/* The "terminal" page: ink ground, paper text, monospace throughout. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 25px;
+  text-wrap: pretty;
+}
+a { color: var(--color-accent-300); text-decoration: none; }
+a:hover { color: var(--color-accent-200); text-decoration: underline; }
+::selection { background: var(--color-accent-700); color: var(--color-bg); }
+:focus-visible { outline: 2px solid var(--color-accent-300); outline-offset: 2px; }
+img { display: block; max-width: 100%; }
+h1, h2 { font-family: inherit; font-weight: 400; margin: 0; }
+p { margin: 0; }
+button { font: inherit; }
+
+@keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+/* — shared page vocabulary — */
+.kicker {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-400);
+}
+.section-title {
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+  max-width: 36ch;
+  color: var(--color-bg);
+}
+.prose {
+  margin: 0 0 14px;
+  max-width: 72ch;
+  color: var(--color-neutral-300);
+}
+.em { color: var(--color-bg); }
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-outline,
+.btn-quiet {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid;
+}
+.btn-outline { border-color: var(--color-accent-300); color: var(--color-accent-300); }
+.btn-outline:hover { background: var(--color-accent-300); color: var(--color-text); text-decoration: none; }
+.btn-quiet { border-color: var(--color-neutral-700); color: var(--color-neutral-300); }
+.btn-quiet:hover { border-color: var(--color-neutral-400); color: var(--color-neutral-300); text-decoration: none; }
+
+/* A framed panel with a one-line chrome strip on top. */
+.frame { border: 1px solid var(--color-neutral-800); }
+.frame-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--color-neutral-400);
+  background: var(--color-neutral-900);
+  border-bottom: 1px solid var(--color-neutral-800);
+}
+
+/* Placeholder for a screen recording that has not been produced yet. */
+.video-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 16px;
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-500);
+  text-align: center;
+}
+.video-slot-play { font-size: 26px; line-height: 1; color: var(--color-neutral-700); }
+.video-slot-text { font-size: 12.5px; }
+.video-slot-path { font-size: 12px; color: var(--color-neutral-400); }
+.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #000;
+}
