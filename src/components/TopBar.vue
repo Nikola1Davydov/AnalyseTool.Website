@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { site } from '@/data/site'
+import { useLatestVersion } from '@/composables/useLatestVersion'
+
+const version = useLatestVersion()
 </script>
 
 <template>
   <header class="topbar">
-    <span>AnalyseTool <span class="version">{{ site.version }}</span> — {{ site.revitVersions }}</span>
+    <span>AnalyseTool <span class="version">{{ version }}</span> — {{ site.revitVersions }}</span>
     <span>Windows · Apache 2.0 (SDK: MIT)</span>
   </header>
 </template>

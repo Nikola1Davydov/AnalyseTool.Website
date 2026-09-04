@@ -35,9 +35,14 @@ src/components/
   InstallSection, CtaSection, SiteFooter
 ```
 
+## Deployment
+
+`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main`, on manual dispatch, and once a day. The Pages source for the repository must be set to "GitHub Actions".
+
 ## Content knobs
 
-- **Version and links**: `src/data/site.ts`.
+- **Version**: taken from the AnalyzeTool repository. The workflow reads the latest release tag (or the newest tag when there is no release) and passes it in as `VITE_ANALYSETOOL_VERSION`; the page also refreshes it from the GitHub API on load. The literal in `src/data/site.ts` is only the fallback for local builds. To build locally with a specific version: `VITE_ANALYSETOOL_VERSION=1.5.1 npm run build`.
+- **Links**: `src/data/site.ts`.
 - **Screen recordings**: put the files under `public/videos/` and set `video` on the matching entry in `src/data/runs.ts` (for example `videos/doors-fire-rating.mp4`) or `site.mcpVideo`. While a slot is empty the page shows the placeholder with the expected path.
 - **Hide the Revit illustration or the SDK row**: `site.showScreenshot`, `site.showDevelopers`.
 
