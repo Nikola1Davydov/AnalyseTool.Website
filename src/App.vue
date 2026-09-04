@@ -29,8 +29,8 @@ const tick = useTicker(620)
       <HeroSection />
       <HowSection />
       <HostIllustration v-if="site.showScreenshot" :tick="tick" />
-      <AskSection :tick="tick" />
       <McpSection />
+      <AskSection :tick="tick" />
       <ModelsSection />
       <ParametersSection />
       <WorkflowSection />

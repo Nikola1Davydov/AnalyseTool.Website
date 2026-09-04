@@ -5,9 +5,6 @@ export const site = {
   showScreenshot: true,
   /** Renders the "dotnet add package" row in the open-source section. */
   showDevelopers: true,
-  /** URL of a screen recording of an agent driving Revit over MCP. Empty = placeholder. */
-  mcpVideo: '',
-  mcpVideoSlot: 'videos/mcp-agent-revit.mp4',
   sdkCommand: 'dotnet add package AnalyseTool.Sdk',
 } as const
 

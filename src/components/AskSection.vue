@@ -78,7 +78,7 @@ const num = (i: number): string => String(i + 1).padStart(2, '0')
 </template>
 
 <style scoped>
-.ask { padding: 14px 0 56px; }
+.ask { padding: 0 0 56px; }
 .ask-kicker { margin-bottom: 20px; }
 .grid {
   display: grid;
