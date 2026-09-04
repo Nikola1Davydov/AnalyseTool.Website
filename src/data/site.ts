@@ -20,7 +20,6 @@ export const links = {
   youtube: 'https://www.youtube.com/@AnalyseTool-Revit',
   familyManager: 'https://github.com/Nikola1Davydov/AnalyseTool.FamilyManager',
   ollama: 'https://ollama.com/download',
-  webview2: 'https://developer.microsoft.com/microsoft-edge/webview2/',
 } as const
 
 export interface NavLink {

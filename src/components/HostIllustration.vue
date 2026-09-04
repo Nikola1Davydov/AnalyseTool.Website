@@ -36,7 +36,7 @@ interface Panel {
   cols: SmallButton[][]
 }
 
-const INVOKED = 'Линии → семейство'
+const INVOKED = 'Lines → Family'
 
 function ribbonPanels(t: number): Panel[] {
   const invoked = t >= 17 && t < 21 ? INVOKED : null
