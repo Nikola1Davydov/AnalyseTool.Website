@@ -4,10 +4,6 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    # Daily rebuild so a new AnalyzeTool release reaches the page
-    # without a commit here.
-    - cron: '17 6 * * *'
 
 permissions:
   contents: read
@@ -28,20 +24,6 @@ jobs:
         with:
           node-version: 24
           cache: npm
-
-      - name: Resolve latest AnalyseTool version
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          repo=Nikola1Davydov/AnalyzeTool
-          version="$(gh api "repos/$repo/releases/latest" --jq .tag_name 2>/dev/null || true)"
-          if [ -z "$version" ]; then
-            version="$(gh api "repos/$repo/tags?per_page=1" --jq '.[0].name')"
-          fi
-          version="${version#v}"
-          echo "AnalyseTool version: $version"
-          echo "VITE_ANALYSETOOL_VERSION=$version" >> "$GITHUB_ENV"
 
       - run: npm ci
       - run: npm run build

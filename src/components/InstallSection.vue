@@ -23,7 +23,8 @@ import { links } from '@/data/site'
         <span class="text">Start Revit and open the <span class="em">AnalyseTool</span> ribbon tab.</span>
       </li>
     </ol>
-    <p class="requirements">Requires Revit 2025, 2026 or 2027 on Windows, plus the Microsoft Edge WebView2 Runtime — present on most up-to-date Windows installations, and the plugin prompts with a download link when it is missing. Blank window? <a :href="links.webview2" target="_blank" rel="noopener">Install WebView2</a> and restart Revit. Logs: <span class="em">%LOCALAPPDATA%\AnalyseTool\logs</span>.</p>
+    <p class="requirements">Requires Revit 2025, 2026 or 2027 on Windows. 
+    <br/>Logs: <span class="em">%LOCALAPPDATA%\AnalyseTool\logs</span>.</p>
   </section>
 </template>
 

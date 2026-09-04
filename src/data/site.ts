@@ -1,11 +1,5 @@
-/** Site-wide constants: version, external links, feature flags, media slots. */
+/** Site-wide constants: external links, feature flags, media slots. */
 export const site = {
-  /**
-   * Latest AnalyseTool release. The deploy workflow reads it from the
-   * AnalyzeTool releases (or tags) and passes it in as
-   * VITE_ANALYSETOOL_VERSION; the literal is the fallback for local builds.
-   */
-  version: import.meta.env.VITE_ANALYSETOOL_VERSION || '1.5.1',
   revitVersions: 'Revit 2025, 2026, 2027',
   /** Renders the Revit host illustration block. */
   showScreenshot: true,
@@ -57,10 +51,5 @@ export const officialExtensions: readonly Extension[] = [
     name: 'Family Manager',
     note: 'Browse, place and audit families — our own extension, on the same rails as yours.',
     href: links.familyManager,
-  },
-  {
-    name: 'Extension catalog',
-    note: 'Install from a GitHub repository in one click, or publish your own with a git tag.',
-    href: links.wiki,
   },
 ]
