@@ -22,7 +22,7 @@ index.html                 document shell, meta tags, favicon
 src/main.ts                mounts App, loads global styles
 src/App.vue                page container; owns the one 620 ms clock the animations share
 src/styles/tokens.css      Broadsheet design-system tokens (colors, ramps, mono font stack)
-src/styles/base.css        page-wide rules and the shared vocabulary (.kicker, .prose, .frame, buttons, video slot)
+src/styles/base.css        page-wide rules and the shared vocabulary (.kicker, .prose, .frame, buttons, video)
 src/data/site.ts           links, flags (showScreenshot, showDevelopers), official extensions
 src/data/runs.ts           the four example requests shown in "Ask in plain language"
 src/composables/useTicker.ts   the interval counter
@@ -30,7 +30,7 @@ src/components/
   TopBar, SiteNav, HeroSection, HowSection
   HostIllustration         the animated Revit window (ribbon story, plan, MCP log), 22-beat cycle
   McpSection               the MCP pitch; followed by
-  AskSection               example MCP requests + step-by-step run, VideoOrSlot for the recording
+  AskSection               example MCP requests + step-by-step run
   ModelsSection, ParametersSection, WorkflowSection (ProseSection wrapper)
   OpenSourceSection        official extensions + "dotnet add package" copy button
   InstallSection, CtaSection, SiteFooter
@@ -43,7 +43,7 @@ Netlify: `netlify.toml` sets the build command (`npm run build`), the publish di
 ## Content knobs
 
 - **Links and official extensions**: `src/data/site.ts`.
-- **Screen recordings**: put the files under `public/videos/` and set `video` on the matching entry in `src/data/runs.ts` (for example `videos/doors-fire-rating.mp4`). While a slot is empty the page shows the placeholder with the expected path.
+- **Screen recordings**: put the files under `public/videos/` and set `video` on the matching entry in `src/data/runs.ts` (for example `videos/doors-fire-rating.mp4`). Entries without a video show no media.
 - **Hide the Revit illustration or the SDK row**: `site.showScreenshot`, `site.showDevelopers`.
 
 ## Toolchain notes

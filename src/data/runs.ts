@@ -6,9 +6,8 @@ export interface Run {
   intro: string
   steps: readonly string[]
   done: string
-  /** URL of a screen recording. Empty = show the placeholder with `videoSlot`. */
+  /** URL of a screen recording, e.g. `videos/doors-fire-rating.mp4` under public/. Empty = no media. */
   video: string
-  videoSlot: string
 }
 
 /** Non-empty by type, so `runs[0]` is always a valid fallback. */
@@ -25,7 +24,6 @@ export const runs: readonly [Run, ...Run[]] = [
     ],
     done: '37 doors have no fire rating — select or isolate them from the chart.',
     video: '',
-    videoSlot: 'videos/doors-fire-rating.mp4',
   },
   {
     title: 'Room numbers against our naming rule',
@@ -39,7 +37,6 @@ export const runs: readonly [Run, ...Run[]] = [
     ],
     done: '9 rooms deviate — 6 missing the level prefix, 3 with two digits.',
     video: '',
-    videoSlot: 'videos/rooms-naming-rule.mp4',
   },
   {
     title: 'Fill Contractor on Level 7 air terminals',
@@ -53,7 +50,6 @@ export const runs: readonly [Run, ...Run[]] = [
     ],
     done: '378 values ready to write — review, then apply in one transaction.',
     video: '',
-    videoSlot: 'videos/air-terminals-contractor.mp4',
   },
   {
     title: 'What to clean up first',
@@ -67,6 +63,5 @@ export const runs: readonly [Run, ...Run[]] = [
     ],
     done: 'Fire Rating, Mark and Contractor lead — 4,100 empty values together.',
     video: '',
-    videoSlot: 'videos/rank-cleanup.mp4',
   },
 ]

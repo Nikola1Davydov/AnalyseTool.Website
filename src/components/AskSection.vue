@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { runs } from '@/data/runs'
-import VideoOrSlot from '@/components/VideoOrSlot.vue'
 
 /**
  * "Ask in plain language": pick an example request on the left and
@@ -56,7 +55,7 @@ const num = (i: number): string => String(i + 1).padStart(2, '0')
 
       <div class="frame run-frame">
         <p class="frame-head"><span>AnalyseTool · Canvas</span><span>{{ run.model }}</span></p>
-        <VideoOrSlot :src="run.video" :slot-path="run.videoSlot" label="Screen recording of this request" bordered />
+        <video v-if="run.video" class="video" :src="run.video" autoplay muted loop playsinline controls></video>
         <div class="run" aria-live="polite">
           <p class="who-row"><span class="who">You asked</span></p>
           <p class="asked">{{ run.prompt }}</p>
@@ -113,6 +112,7 @@ const num = (i: number): string => String(i + 1).padStart(2, '0')
 .num { color: var(--color-neutral-800); }
 .prompt.active .num { color: var(--color-accent-300); }
 
+.video { border-bottom: 1px solid var(--color-neutral-800); }
 .run { padding: 14px; }
 .who-row { display: flex; gap: 10px; }
 .who { color: var(--color-accent-2-400); white-space: nowrap; flex: 0 0 auto; }
